@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Column & Thoughts — Zhang Yiyun">
-<title>Column — Zhang Yiyun</title>
+<meta name="description" content="Life & Hobbies — Zhang Yiyun">
+<title>Life — Zhang Yiyun</title>
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,8 +22,8 @@
     </a>
     <ul class="nav-links">
       <li><a href="index.html"><span class="zh">主页</span><span class="en">Home</span></a></li>
-      <li><a href="life.html"><span class="zh">生活</span><span class="en">Life</span></a></li>
-      <li><a href="column.html" class="active"><span class="zh">专栏</span><span class="en">Column</span></a></li>
+      <li><a href="life.html" class="active"><span class="zh">生活</span><span class="en">Life</span></a></li>
+      <li><a href="column.html"><span class="zh">专栏</span><span class="en">Column</span></a></li>
     </ul>
     <div class="nav-toggles">
       <button class="nav-toggle lang-toggle" id="langToggle" aria-label="Toggle language">中</button>
@@ -34,38 +34,27 @@
 
 <main>
 
-  <div class="tab-bar" id="tabBar">
-    <button class="tab-btn active" data-tab="articles">
-      <span class="zh">专栏</span><span class="en">Articles</span>
-    </button>
-    <button class="tab-btn" data-tab="thoughts">
-      <span class="zh">思考</span><span class="en">Thoughts</span>
-    </button>
-  </div>
-
-  <div class="tab-panel active" id="panel-articles">
-    <div class="article-list">
-      <div class="empty-state" style="grid-column: 1 / -1;">
-        <div class="icon">📝</div>
-        <p>
-          <span class="zh">文章即将上线，敬请期待。</span>
-          <span class="en">Articles coming soon. Stay tuned.</span>
-        </p>
-      </div>
+  <section id="hobbies">
+    <div class="section-label"><span class="zh">兴趣爱好</span><span class="en">Hobbies & Interests</span></div>
+    <div class="empty-state">
+      <div class="icon">🎨</div>
+      <p>
+        <span class="zh">内容即将上线，敬请期待。</span>
+        <span class="en">Coming soon. Stay tuned.</span>
+      </p>
     </div>
-  </div>
+  </section>
 
-  <div class="tab-panel" id="panel-thoughts">
-    <div class="article-list">
-      <div class="empty-state" style="grid-column: 1 / -1;">
-        <div class="icon">💭</div>
-        <p>
-          <span class="zh">一些临床与科研中的思考与感悟。</span>
-          <span class="en">Reflections from clinical practice and research.</span>
-        </p>
-      </div>
+  <section id="daily">
+    <div class="section-label"><span class="zh">日常生活</span><span class="en">Daily Life</span></div>
+    <div class="empty-state">
+      <div class="icon">📷</div>
+      <p>
+        <span class="zh">内容即将上线，敬请期待。</span>
+        <span class="en">Coming soon. Stay tuned.</span>
+      </p>
     </div>
-  </div>
+  </section>
 
 </main>
 
