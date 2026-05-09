@@ -254,6 +254,7 @@ section {
 /* --- Hero --- */
 .hero {
   margin-top: 56px;
+  margin-bottom: 8px;
   text-align: center;
 }
 
@@ -288,9 +289,7 @@ section {
   font-weight: 500;
 }
 
-.hero-bio {
-  max-width: 560px;
-  margin: 24px auto 0;
+.about-text {
   font-size: 0.97rem;
   color: var(--color-text-secondary);
   line-height: 1.8;
@@ -621,7 +620,7 @@ footer {
     font-size: 1.55rem;
   }
 
-  .hero-bio {
+  .about-text {
     font-size: 0.9rem;
   }
 
