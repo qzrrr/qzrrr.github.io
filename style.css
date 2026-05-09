@@ -61,7 +61,7 @@ html {
 }
 
 body {
-  font-family: var(--font-cn);
+  font-family: var(--font-en);
   background: var(--color-bg);
   color: var(--color-text);
   line-height: 1.7;
@@ -69,9 +69,14 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-.en {
-  font-family: var(--font-en);
+[data-lang="zh"] body {
+  font-family: var(--font-cn);
 }
+
+/* Language visibility — default English */
+.zh { display: none; }
+[data-lang="zh"] .en { display: none; }
+[data-lang="zh"] .zh { display: revert; }
 
 a {
   color: var(--color-primary);
@@ -149,26 +154,44 @@ img {
   background: var(--color-primary-muted);
 }
 
-.theme-toggle {
+.nav-toggles {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.nav-toggle {
   background: none;
   border: 1px solid var(--color-border);
   border-radius: 8px;
-  width: 36px;
   height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
   color: var(--color-text-secondary);
   transition: border-color 0.2s, color 0.2s, background 0.2s;
   flex-shrink: 0;
+  font-family: var(--font-en);
 }
 
-.theme-toggle:hover {
+.nav-toggle:hover {
   border-color: var(--color-primary);
   color: var(--color-primary);
   background: var(--color-primary-muted);
+}
+
+.theme-toggle {
+  width: 36px;
+  font-size: 1rem;
+}
+
+.lang-toggle {
+  width: 42px;
+  padding: 0;
+  letter-spacing: 0.02em;
 }
 
 /* --- Layout --- */
@@ -227,14 +250,6 @@ section {
   line-height: 1.3;
 }
 
-.hero-name .en {
-  display: block;
-  font-size: 1.15rem;
-  font-weight: 500;
-  color: var(--color-text-secondary);
-  margin-top: 4px;
-}
-
 .hero-title {
   display: inline-block;
   margin-top: 12px;
@@ -246,26 +261,12 @@ section {
   font-weight: 500;
 }
 
-.hero-title .en {
-  display: block;
-  font-size: 0.8rem;
-  opacity: 0.75;
-  margin-top: 2px;
-}
-
 .hero-bio {
   max-width: 560px;
   margin: 24px auto 0;
   font-size: 0.97rem;
   color: var(--color-text-secondary);
   line-height: 1.8;
-}
-
-.hero-bio .en {
-  display: block;
-  margin-top: 12px;
-  font-size: 0.9rem;
-  color: var(--color-text-tertiary);
 }
 
 /* --- Education --- */
@@ -315,11 +316,6 @@ section {
   font-size: 0.9rem;
   color: var(--color-text-secondary);
   margin-top: 2px;
-}
-
-.timeline-major .en {
-  font-size: 0.84rem;
-  color: var(--color-text-tertiary);
 }
 
 /* --- Research --- */
@@ -395,12 +391,6 @@ section {
 
 .skill-tag:hover {
   transform: translateY(-1px);
-}
-
-.skill-tag .en {
-  display: block;
-  font-size: 0.73rem;
-  opacity: 0.7;
 }
 
 /* --- Contact --- */
@@ -571,10 +561,6 @@ footer {
     font-size: 1.55rem;
   }
 
-  .hero-name .en {
-    font-size: 1rem;
-  }
-
   .hero-bio {
     font-size: 0.9rem;
   }
@@ -601,7 +587,7 @@ footer {
 
 @media print {
   .navbar,
-  .theme-toggle,
+  .nav-toggles,
   .tab-bar {
     display: none !important;
   }

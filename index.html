@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="light">
+<html lang="en" data-theme="light" data-lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="张逸云 / Zhang Yiyun — 华中科技大学同济医学院附属协和医院耳鼻咽喉头颈外科住院医师">
-<title>张逸云 / Zhang Yiyun</title>
+<meta name="description" content="Zhang Yiyun — Resident, Department of Otolaryngology–Head and Neck Surgery, Union Hospital, Tongji Medical College, HUST">
+<title>Zhang Yiyun</title>
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,13 +16,17 @@
   <div class="navbar-inner">
     <a href="index.html" class="nav-logo">
       <img src="images/avatar.jpg" alt="Avatar">
-      张逸云
+      <span class="zh">张逸云</span>
+      <span class="en">Zhang Yiyun</span>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html" class="active">主页</a></li>
-      <li><a href="column.html">专栏</a></li>
+      <li><a href="index.html" class="active"><span class="zh">主页</span><span class="en">Home</span></a></li>
+      <li><a href="column.html"><span class="zh">专栏</span><span class="en">Column</span></a></li>
     </ul>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    <div class="nav-toggles">
+      <button class="nav-toggle lang-toggle" id="langToggle" aria-label="Toggle language">中</button>
+      <button class="nav-toggle theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
   </div>
 </nav>
 
@@ -30,39 +34,39 @@
 
   <!-- Hero -->
   <section class="hero">
-    <img class="hero-avatar" src="images/avatar.jpg" alt="张逸云">
+    <img class="hero-avatar" src="images/avatar.jpg" alt="Zhang Yiyun">
     <h1 class="hero-name">
-      张逸云
+      <span class="zh">张逸云</span>
       <span class="en">Zhang Yiyun</span>
     </h1>
     <div class="hero-title">
-      住院医师 · 华中科技大学同济医学院附属协和医院
+      <span class="zh">住院医师 · 华中科技大学同济医学院附属协和医院</span>
       <span class="en">Resident, Department of Otolaryngology–Head and Neck Surgery, Union Hospital, Tongji Medical College, HUST</span>
     </div>
     <div class="hero-bio">
-      协和医院耳鼻咽喉头颈外科住院医师。住培期间获湖北省病例演讲比赛一等奖，发表 SCI 论文 1 篇，多次获国家级奖学金及患者表扬。
+      <span class="zh">协和医院耳鼻咽喉头颈外科住院医师。住培期间获湖北省病例演讲比赛一等奖，发表 SCI 论文 1 篇，多次获国家级奖学金及患者表扬。</span>
       <span class="en">A resident at Union Hospital specializing in Otolaryngology–Head and Neck Surgery. Awarded first prize in the Hubei Provincial Case Presentation Contest, with one SCI publication, multiple national scholarships, and patient commendations.</span>
     </div>
   </section>
 
   <!-- Education -->
   <section id="education">
-    <div class="section-label">Education / 教育背景</div>
+    <div class="section-label"><span class="zh">教育背景</span><span class="en">Education</span></div>
     <ul class="timeline">
       <li class="timeline-item">
-        <div class="timeline-period">2024 – 2027 (Expected)</div>
-        <div class="timeline-school">华中科技大学同济医学院</div>
+        <div class="timeline-period"><span class="zh">2024 – 2027（预计）</span><span class="en">2024 – 2027 (Expected)</span></div>
+        <div class="timeline-school"><span class="zh">华中科技大学同济医学院</span><span class="en">Tongji Medical College, HUST</span></div>
         <div class="timeline-major">
-          耳鼻咽喉头颈外科 · 专业型硕士（住院医师规范化培训）
-          <span class="en">M.M. in Otolaryngology–Head and Neck Surgery, Tongji Medical College, HUST (with standardized residency training)</span>
+          <span class="zh">耳鼻咽喉头颈外科 · 专业型硕士（住院医师规范化培训）</span>
+          <span class="en">M.M. in Otolaryngology–Head and Neck Surgery (with standardized residency training)</span>
         </div>
       </li>
       <li class="timeline-item">
         <div class="timeline-period">2019 – 2024</div>
-        <div class="timeline-school">湖北科技学院</div>
+        <div class="timeline-school"><span class="zh">湖北科技学院</span><span class="en">Hubei University of Science and Technology</span></div>
         <div class="timeline-major">
-          临床医学 · 学士
-          <span class="en">B.M. in Clinical Medicine, Hubei University of Science and Technology</span>
+          <span class="zh">临床医学 · 学士</span>
+          <span class="en">B.M. in Clinical Medicine</span>
         </div>
       </li>
     </ul>
@@ -70,56 +74,41 @@
 
   <!-- Research -->
   <section id="research">
-    <div class="section-label">Research / 科研学术</div>
+    <div class="section-label"><span class="zh">科研学术</span><span class="en">Research</span></div>
     <p class="research-direction" style="margin-bottom:18px;">
-      研究方向：<strong>耳科相关疾病</strong>（先天性巨细胞病毒感染相关听力损失、耳闷胀感干预等）
-      <span class="en" style="display:block;margin-top:4px;font-size:0.84rem;color:var(--color-text-tertiary);">Research focus: Otological disorders — congenital CMV infection–related hearing loss, aural fullness intervention</span>
+      <span class="zh"><strong>研究方向：耳科相关疾病</strong>（先天性巨细胞病毒感染相关听力损失、耳闷胀感干预等）</span>
+      <span class="en"><strong>Research focus: Otological disorders</strong> — congenital CMV infection–related hearing loss, aural fullness intervention</span>
     </p>
 
     <div class="research-grid">
       <div class="research-card">
         <span class="badge">SCI · Q1 · IF 3.3</span>
         <h3>Hearing Loss in Infants and Children with Asymptomatic Congenital Cytomegalovirus Infection: An Update in Diagnosis, Screening and Treatment</h3>
-        <div class="meta">Published in English</div>
+        <div class="meta"><span class="zh">已发表（英文）</span><span class="en">Published in English</span></div>
       </div>
       <div class="research-card">
-        <span class="badge">English Publication</span>
+        <span class="badge"><span class="zh">英文发表</span><span class="en">English Publication</span></span>
         <h3>A Humanized Anti-IL-4Rα Monoclonal Antibody Improves Aural Fullness</h3>
-        <div class="meta">Published in English</div>
+        <div class="meta"><span class="zh">已发表（英文）</span><span class="en">Published in English</span></div>
       </div>
     </div>
   </section>
 
   <!-- Clinical Skills -->
   <section id="clinical-skills">
-    <div class="section-label">Clinical Skills / 临床技能</div>
+    <div class="section-label"><span class="zh">临床技能</span><span class="en">Clinical Skills</span></div>
     <div class="skill-tags">
-      <span class="skill-tag">
-        耳鼻咽喉头颈外科常见病诊疗
-        <span class="en">ENT Common Disease Management</span>
-      </span>
-      <span class="skill-tag">
-        病例汇报与演讲
-        <span class="en">Case Presentation & Public Speaking</span>
-      </span>
-      <span class="skill-tag">
-        医患沟通
-        <span class="en">Doctor-Patient Communication</span>
-      </span>
-      <span class="skill-tag">
-        患者关怀
-        <span class="en">Patient-Centered Care</span>
-      </span>
-      <span class="skill-tag">
-        执业医师资格（已通过）
-        <span class="en">Medical License (Passed)</span>
-      </span>
+      <span class="skill-tag"><span class="zh">耳鼻咽喉头颈外科常见病诊疗</span><span class="en">ENT Common Disease Management</span></span>
+      <span class="skill-tag"><span class="zh">病例汇报与演讲</span><span class="en">Case Presentation & Public Speaking</span></span>
+      <span class="skill-tag"><span class="zh">医患沟通</span><span class="en">Doctor-Patient Communication</span></span>
+      <span class="skill-tag"><span class="zh">患者关怀</span><span class="en">Patient-Centered Care</span></span>
+      <span class="skill-tag"><span class="zh">执业医师资格（已通过）</span><span class="en">Medical License (Passed)</span></span>
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact">
-    <div class="section-label">Contact / 联系方式</div>
+    <div class="section-label"><span class="zh">联系方式</span><span class="en">Contact</span></div>
     <div class="contact-list">
       <a href="mailto:m202476386@hust.edu.cn" class="contact-item">
         <span class="contact-icon">✉️</span>
@@ -132,7 +121,7 @@
 
 <footer>
   <div class="footer-disclaimer">
-    <p>本站内容仅供学习与交流，不构成医疗建议。如有健康问题，请咨询专业医疗机构。</p>
+    <p class="zh">本站内容仅供学习与交流，不构成医疗建议。如有健康问题，请咨询专业医疗机构。</p>
     <p class="en">The content on this site is for educational and informational purposes only and does not constitute medical advice. Please consult a qualified healthcare professional for any health concerns.</p>
   </div>
   <div class="footer-copy">&copy; 2025 Zhang Yiyun</div>

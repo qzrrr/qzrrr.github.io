@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="light">
+<html lang="en" data-theme="light" data-lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="专栏与思考 — 张逸云 / Zhang Yiyun">
-<title>专栏 — 张逸云 / Zhang Yiyun</title>
+<meta name="description" content="Column & Thoughts — Zhang Yiyun">
+<title>Column — Zhang Yiyun</title>
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,28 +16,39 @@
   <div class="navbar-inner">
     <a href="index.html" class="nav-logo">
       <img src="images/avatar.jpg" alt="Avatar">
-      张逸云
+      <span class="zh">张逸云</span>
+      <span class="en">Zhang Yiyun</span>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html">主页</a></li>
-      <li><a href="column.html" class="active">专栏</a></li>
+      <li><a href="index.html"><span class="zh">主页</span><span class="en">Home</span></a></li>
+      <li><a href="column.html" class="active"><span class="zh">专栏</span><span class="en">Column</span></a></li>
     </ul>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    <div class="nav-toggles">
+      <button class="nav-toggle lang-toggle" id="langToggle" aria-label="Toggle language">中</button>
+      <button class="nav-toggle theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
   </div>
 </nav>
 
 <main>
 
   <div class="tab-bar" id="tabBar">
-    <button class="tab-btn active" data-tab="articles">专栏 Articles</button>
-    <button class="tab-btn" data-tab="thoughts">思考 Thoughts</button>
+    <button class="tab-btn active" data-tab="articles">
+      <span class="zh">专栏</span><span class="en">Articles</span>
+    </button>
+    <button class="tab-btn" data-tab="thoughts">
+      <span class="zh">思考</span><span class="en">Thoughts</span>
+    </button>
   </div>
 
   <div class="tab-panel active" id="panel-articles">
     <div class="article-list">
       <div class="empty-state" style="grid-column: 1 / -1;">
         <div class="icon">📝</div>
-        <p>文章即将上线，敬请期待。<br><span class="en">Articles coming soon. Stay tuned.</span></p>
+        <p>
+          <span class="zh">文章即将上线，敬请期待。</span>
+          <span class="en">Articles coming soon. Stay tuned.</span>
+        </p>
       </div>
     </div>
   </div>
@@ -46,7 +57,10 @@
     <div class="article-list">
       <div class="empty-state" style="grid-column: 1 / -1;">
         <div class="icon">💭</div>
-        <p>一些临床与科研中的思考与感悟。<br><span class="en">Reflections from clinical practice and research.</span></p>
+        <p>
+          <span class="zh">一些临床与科研中的思考与感悟。</span>
+          <span class="en">Reflections from clinical practice and research.</span>
+        </p>
       </div>
     </div>
   </div>
@@ -55,7 +69,7 @@
 
 <footer>
   <div class="footer-disclaimer">
-    <p>本站内容仅供学习与交流，不构成医疗建议。如有健康问题，请咨询专业医疗机构。</p>
+    <p class="zh">本站内容仅供学习与交流，不构成医疗建议。如有健康问题，请咨询专业医疗机构。</p>
     <p class="en">The content on this site is for educational and informational purposes only and does not constitute medical advice. Please consult a qualified healthcare professional for any health concerns.</p>
   </div>
   <div class="footer-copy">&copy; 2025 Zhang Yiyun</div>
