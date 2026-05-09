@@ -355,7 +355,7 @@ section {
 .honor-item {
   display: flex;
   align-items: baseline;
-  gap: 14px;
+  gap: 24px;
   padding: 9px 0;
   border-bottom: 1px solid var(--color-border);
   font-size: 0.9rem;
