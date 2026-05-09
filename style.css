@@ -5,9 +5,9 @@
 
 /* --- CSS Variables --- */
 :root {
-  --color-bg: #f5f7fa;
-  --color-surface: #ffffff;
-  --color-surface-hover: #f0f4f8;
+  --color-bg: rgba(245, 247, 250, 0.92);
+  --color-surface: rgba(255, 255, 255, 0.94);
+  --color-surface-hover: rgba(240, 244, 248, 0.94);
   --color-primary: #1e6cb8;
   --color-primary-light: #3b82f6;
   --color-primary-muted: #dbeafe;
@@ -19,7 +19,7 @@
   --color-tag-text: #1e6cb8;
   --color-shadow: rgba(0, 0, 0, 0.06);
   --color-shadow-lg: rgba(0, 0, 0, 0.1);
-  --nav-bg: rgba(255, 255, 255, 0.75);
+  --nav-bg: rgba(255, 255, 255, 0.7);
   --nav-blur: 12px;
   --radius: 12px;
   --radius-lg: 20px;
@@ -29,9 +29,9 @@
 }
 
 [data-theme="dark"] {
-  --color-bg: #0b1120;
-  --color-surface: #141e33;
-  --color-surface-hover: #1c2a45;
+  --color-bg: rgba(11, 17, 32, 0.92);
+  --color-surface: rgba(20, 30, 51, 0.94);
+  --color-surface-hover: rgba(28, 42, 69, 0.94);
   --color-primary: #60a5fa;
   --color-primary-light: #93bbfd;
   --color-primary-muted: #1e3050;
@@ -91,6 +91,17 @@ a:hover {
 img {
   max-width: 100%;
   display: block;
+}
+
+/* --- Starfield Background --- */
+#starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* --- Navbar --- */
