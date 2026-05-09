@@ -206,17 +206,33 @@ langToggle.addEventListener("click", () => {
   const section = document.getElementById("honors");
   if (!section) return;
   const items = section.querySelectorAll(".honor-item");
+  let reveals = [];
+
+  function reveal() {
+    reveals.forEach(clearTimeout);
+    reveals = [];
+    items.forEach((item) => item.classList.remove("revealed"));
+    // Force reflow so transition plays from scratch
+    void section.offsetHeight;
+    items.forEach((item, i) => {
+      reveals.push(setTimeout(() => {
+        item.classList.add("revealed");
+      }, i * 90));
+    });
+  }
+
+  function reset() {
+    reveals.forEach(clearTimeout);
+    reveals = [];
+    items.forEach((item) => item.classList.remove("revealed"));
+  }
 
   const observer = new IntersectionObserver(
     (entries) => {
       if (entries[0].isIntersecting) {
-        items.forEach((item, i) => {
-          setTimeout(() => {
-            item.classList.add("revealed");
-          }, i * 90);
-        });
+        reveal();
       } else {
-        items.forEach((item) => item.classList.remove("revealed"));
+        reset();
       }
     },
     { threshold: 0.2 }
