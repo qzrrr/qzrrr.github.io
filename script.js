@@ -215,7 +215,8 @@ langToggle.addEventListener("click", () => {
             item.classList.add("revealed");
           }, i * 90);
         });
-        observer.unobserve(section);
+      } else {
+        items.forEach((item) => item.classList.remove("revealed"));
       }
     },
     { threshold: 0.2 }
