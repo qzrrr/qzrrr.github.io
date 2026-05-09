@@ -5,9 +5,9 @@
 
 /* --- CSS Variables --- */
 :root {
-  --color-bg: rgba(245, 247, 250, 0.92);
-  --color-surface: rgba(255, 255, 255, 0.94);
-  --color-surface-hover: rgba(240, 244, 248, 0.94);
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f5f7fb;
   --color-primary: #1e6cb8;
   --color-primary-light: #3b82f6;
   --color-primary-muted: #dbeafe;
@@ -29,9 +29,9 @@
 }
 
 [data-theme="dark"] {
-  --color-bg: rgba(11, 17, 32, 0.92);
-  --color-surface: rgba(20, 30, 51, 0.94);
-  --color-surface-hover: rgba(28, 42, 69, 0.94);
+  --color-bg: #0b1120;
+  --color-surface: #141e33;
+  --color-surface-hover: #1c2a45;
   --color-primary: #60a5fa;
   --color-primary-light: #93bbfd;
   --color-primary-muted: #1e3050;
@@ -62,11 +62,25 @@ html {
 
 body {
   font-family: var(--font-en);
-  background: var(--color-bg);
+  background:
+    radial-gradient(ellipse 80% 60% at 15% 40%, rgba(190, 215, 245, 0.28) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 85% 25%, rgba(200, 225, 250, 0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 70% at 50% 90%, rgba(210, 230, 248, 0.2) 0%, transparent 55%),
+    linear-gradient(170deg, #f8fafc 0%, #f2f5fa 40%, #f5f7fa 100%);
+  background-attachment: fixed;
   color: var(--color-text);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background 0.5s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] body {
+  background:
+    radial-gradient(ellipse 80% 60% at 15% 40%, rgba(20, 50, 100, 0.35) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 85% 25%, rgba(15, 40, 85, 0.28) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 70% at 50% 90%, rgba(10, 30, 65, 0.22) 0%, transparent 55%),
+    linear-gradient(170deg, #0b1120 0%, #0d1428 40%, #0a0f1c 100%);
+  background-attachment: fixed;
 }
 
 [data-lang="zh"] body {

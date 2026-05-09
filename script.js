@@ -84,37 +84,34 @@ langToggle.addEventListener("click", () => {
 
     const isDark = html.getAttribute("data-theme") === "dark";
 
-    // Clear with subtle fade trail
     ctx.clearRect(0, 0, W, H);
 
-    // --- Subtle radial vignette for geometric depth ---
+    // --- Soft radial vignette — blends into CSS body gradient ---
     const cx = W / 2, cy = H / 2;
     const maxR = Math.sqrt(cx * cx + cy * cy) * 1.1;
-    const vignette = ctx.createRadialGradient(cx, cy, maxR * 0.3, cx, cy, maxR);
+    const vignette = ctx.createRadialGradient(cx, cy, maxR * 0.25, cx, cy, maxR);
     if (isDark) {
-      vignette.addColorStop(0, "rgba(8,14,30,0)");
-      vignette.addColorStop(0.5, "rgba(8,14,30,0.15)");
-      vignette.addColorStop(1, "rgba(4,8,20,0.45)");
+      vignette.addColorStop(0, "rgba(10,16,28,0)");
+      vignette.addColorStop(0.45, "rgba(8,14,26,0.06)");
+      vignette.addColorStop(0.75, "rgba(6,10,20,0.18)");
+      vignette.addColorStop(1, "rgba(3,6,14,0.40)");
     } else {
-      vignette.addColorStop(0, "rgba(220,230,245,0)");
-      vignette.addColorStop(0.5, "rgba(210,222,240,0.1)");
-      vignette.addColorStop(1, "rgba(195,210,232,0.35)");
+      vignette.addColorStop(0, "rgba(230,238,250,0)");
+      vignette.addColorStop(0.45, "rgba(220,232,248,0.05)");
+      vignette.addColorStop(0.75, "rgba(205,222,242,0.15)");
+      vignette.addColorStop(1, "rgba(190,212,238,0.32)");
     }
     ctx.fillStyle = vignette;
     ctx.fillRect(0, 0, W, H);
 
-    // --- Update & draw particles ---
+    // --- Update particles ---
     for (const p of particles) {
-      // Smooth drift
       p.angle += p.driftSpeed;
       p.vx += Math.cos(p.angle) * p.driftAmp * 0.05;
       p.vy += Math.sin(p.angle) * p.driftAmp * 0.05;
-
-      // Damping
       p.vx *= 0.999;
       p.vy *= 0.999;
 
-      // Mouse repulsion
       const dxM = p.x - mouseX;
       const dyM = p.y - mouseY;
       const distM = Math.sqrt(dxM * dxM + dyM * dyM);
@@ -124,11 +121,9 @@ langToggle.addEventListener("click", () => {
         p.vy += (dyM / distM) * force;
       }
 
-      // Move
       p.x += p.vx;
       p.y += p.vy;
 
-      // Wrap edges with margin
       const margin = 50;
       if (p.x < -margin) p.x = W + margin;
       if (p.x > W + margin) p.x = -margin;
@@ -136,50 +131,51 @@ langToggle.addEventListener("click", () => {
       if (p.y > H + margin) p.y = -margin;
     }
 
-    // --- Draw connections ---
+    // --- Draw connections (very subtle) ---
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x;
         const dy = particles[i].y - particles[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < CONNECT_DIST) {
-          const opacity = (1 - dist / CONNECT_DIST) * 0.35;
+          const opacity = (1 - dist / CONNECT_DIST) * (1 - dist / CONNECT_DIST) * 0.12;
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
           ctx.strokeStyle = isDark
-            ? `rgba(120,180,255,${opacity})`
-            : `rgba(40,100,200,${opacity})`;
-          ctx.lineWidth = 0.6;
+            ? `rgba(140,195,255,${opacity})`
+            : `rgba(100,150,210,${opacity})`;
+          ctx.lineWidth = 0.5;
           ctx.stroke();
         }
       }
     }
 
-    // --- Draw particles ---
+    // --- Draw particles (soft watercolor glow) ---
     for (const p of particles) {
-      // Glow
-      const glow = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 3);
+      const glow = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 4);
       if (isDark) {
-        glow.addColorStop(0, "rgba(160,210,255,0.7)");
-        glow.addColorStop(0.5, "rgba(100,160,240,0.2)");
-        glow.addColorStop(1, "rgba(100,160,240,0)");
+        glow.addColorStop(0, "rgba(150,205,255,0.45)");
+        glow.addColorStop(0.3, "rgba(110,170,240,0.15)");
+        glow.addColorStop(0.6, "rgba(80,140,220,0.04)");
+        glow.addColorStop(1, "rgba(60,120,200,0)");
       } else {
-        glow.addColorStop(0, "rgba(30,80,180,0.55)");
-        glow.addColorStop(0.5, "rgba(50,110,210,0.12)");
-        glow.addColorStop(1, "rgba(50,110,210,0)");
+        glow.addColorStop(0, "rgba(110,160,220,0.28)");
+        glow.addColorStop(0.3, "rgba(130,175,225,0.09)");
+        glow.addColorStop(0.6, "rgba(150,185,230,0.03)");
+        glow.addColorStop(1, "rgba(160,195,235,0)");
       }
       ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r * 3, 0, Math.PI * 2);
+      ctx.arc(p.x, p.y, p.r * 4, 0, Math.PI * 2);
       ctx.fillStyle = glow;
       ctx.fill();
 
-      // Core
+      // Core — just a hint
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
       ctx.fillStyle = isDark
-        ? "rgba(200,230,255,0.85)"
-        : "rgba(25,70,160,0.7)";
+        ? "rgba(200,230,255,0.55)"
+        : "rgba(100,150,210,0.3)";
       ctx.fill();
     }
 
