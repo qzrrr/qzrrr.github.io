@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="专栏、思考与软实力 — 张逸云 / Zhang Yiyun">
+<title>专栏 — 张逸云 / Zhang Yiyun</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/avatar.jpg" alt="Avatar">
+      张逸云
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">主页</a></li>
+      <li><a href="column.html" class="active">专栏</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+  </div>
+</nav>
+
+<main>
+
+  <div class="tab-bar" id="tabBar">
+    <button class="tab-btn active" data-tab="articles">专栏 Articles</button>
+    <button class="tab-btn" data-tab="thoughts">思考 Thoughts</button>
+    <button class="tab-btn" data-tab="softskills">软实力 Soft Skills</button>
+  </div>
+
+  <div class="tab-panel active" id="panel-articles">
+    <div class="article-list">
+      <div class="empty-state" style="grid-column: 1 / -1;">
+        <div class="icon">📝</div>
+        <p>文章即将上线，敬请期待。<br><span class="en">Articles coming soon. Stay tuned.</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="panel-thoughts">
+    <div class="article-list">
+      <div class="empty-state" style="grid-column: 1 / -1;">
+        <div class="icon">💭</div>
+        <p>一些临床与科研中的思考与感悟。<br><span class="en">Reflections from clinical practice and research.</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="panel-softskills">
+    <div class="article-list">
+      <div class="empty-state" style="grid-column: 1 / -1;">
+        <div class="icon">🛠️</div>
+        <p>学术汇报、时间管理、沟通协作等软实力分享。<br><span class="en">Insights on academic presentations, time management, communication, and collaboration.</span></p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-disclaimer">
+    <p>本站内容仅供学习与交流，不构成医疗建议。如有健康问题，请咨询专业医疗机构。</p>
+    <p class="en">The content on this site is for educational and informational purposes only and does not constitute medical advice. Please consult a qualified healthcare professional for any health concerns.</p>
+  </div>
+  <div class="footer-copy">&copy; 2025 Zhang Yiyun</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
