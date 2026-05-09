@@ -201,6 +201,29 @@ langToggle.addEventListener("click", () => {
   });
 })();
 
+// --- Scroll-reveal animation for honors ---
+(function () {
+  const section = document.getElementById("honors");
+  if (!section) return;
+  const items = section.querySelectorAll(".honor-item");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting) {
+        items.forEach((item, i) => {
+          setTimeout(() => {
+            item.classList.add("revealed");
+          }, i * 90);
+        });
+        observer.unobserve(section);
+      }
+    },
+    { threshold: 0.2 }
+  );
+
+  observer.observe(section);
+})();
+
 // --- Tab switching on column page ---
 const tabBar = document.getElementById("tabBar");
 if (tabBar) {
