@@ -345,6 +345,39 @@ section {
   margin-top: 2px;
 }
 
+/* --- Honors --- */
+.honor-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.honor-item {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  transition: border-color 0.3s;
+}
+
+.honor-item:last-child {
+  border-bottom: none;
+}
+
+.honor-date {
+  flex-shrink: 0;
+  width: 68px;
+  font-size: 0.77rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--color-primary);
+  font-family: var(--font-en);
+}
+
 /* --- Research --- */
 .research-grid {
   display: grid;
